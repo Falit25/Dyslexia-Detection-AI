@@ -92,7 +92,8 @@ High recall for disfluency class
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure\
+```bash
 project/
 │
 ├── app.py
@@ -104,7 +105,7 @@ project/
     ├── index.html
     ├── result.html
     └── error.html
----
+```
 
 ## ⚙️ Local Setup
 
