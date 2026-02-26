@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Reading Fluency Analyzer</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 420px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        .file-input {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #5f2c82;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #3f1c52;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>AI Reading Fluency Analyzer</h2>
+        <p>Upload a reading sample to analyze fluency risk.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <label for="audio">Select Audio File:</label><br>
+            <input 
+                type="file" 
+                id="audio" 
+                name="audio" 
+                class="file-input"
+                accept=".wav,.flac"
+                aria-label="Upload reading audio file"
+                required
+            >
+            <br>
+            <button type="submit" aria-label="Analyze audio file">
+                Analyze
+            </button>
+        </form>
+
+        <div class="footer">
+            Prototype Screening Tool — Not a Medical Diagnosis
+        </div>
+    </div>
+</body>
+</html>

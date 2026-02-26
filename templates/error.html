@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 420px;
+            text-align: center;
+        }
+
+        h2 {
+            color: red;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #5f2c82;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3f1c52;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>Error</h2>
+        <p>{{ message }}</p>
+        <br>
+        <a href="/"><button>Go Back</button></a>
+    </div>
+</body>
+</html>

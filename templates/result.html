@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analysis Result</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 420px;
+    text-align: center;
+}
+
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.high { color: red; }
+.low { color: green; }
+
+button {
+    padding: 10px 20px;
+    background: #5f2c82;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+<h2>Analysis Result</h2>
+
+<p class="result {{ 'high' if risk_high else 'low' }}">
+    {{ result }}
+</p>
+
+<p>Risk Probability: {{ probability }}</p>
+<p>Inference Time: {{ inference_time }} seconds</p>
+
+<br>
+<a href="/"><button>Analyze Another</button></a>
+
+</div>
+</body>
+</html>
