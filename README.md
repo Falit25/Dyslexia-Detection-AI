@@ -6,6 +6,12 @@ A machine learning web application that analyzes short reading audio samples to 
 
 ---
 
+##Deployment 
+Opening may take some time as render is a free service provider and loading may take some time at first but it will work fully as it is opened.
+https://dyslexia-detection-ai-1.onrender.com
+
+---
+
 ## 🚀 Overview
 
 This project implements an end-to-end ML pipeline:
