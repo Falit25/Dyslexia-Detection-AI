@@ -297,6 +297,31 @@ pip install -r requirements.txt
 - Confidence explanation and more detailed feedback
 - Cloud deployment and API-based inference
 
-## 13. Conclusion
+## 13. Commits
+
+The following commit progression reflects the development and documentation history of the project repository:
+
+### 13.1 Initial Development
+- **Initial commit: dyslexia fluency analyzer** - `6f23b1a`
+- **Add files via upload** - `4ade12e`
+
+### 13.2 Dependency and Environment Updates
+- **Add setuptools to requirements.txt** - `9ca3a39`
+- **skitilearn upgrade** - `a5bdac6`
+- **Fix pkg_resources error by pinning setuptools** - `8912ab2`
+- **Fix Render Python version config** - `d716679`
+
+### 13.3 Deployment and Repository Preparation
+- **deployment ready** - `507cee5`
+- **Ignore demo video** - `29848f6`
+- **Add deployment section to README** - `6c4d614`
+
+### 13.4 Documentation Improvements
+- **Fix formatting in Project Structure section of README** - `4c27f29`
+- **Update README.md** - `3cb58c1`
+
+These commits show the evolution of the project from the initial fluency analyzer implementation to dependency stabilization, deployment preparation, and documentation refinement.
+
+## 14. Conclusion
 
 This project successfully implements a complete machine learning workflow for dyslexia-related reading fluency screening using speech audio. It includes dataset preparation, balanced sampling, grouped model training, and a Flask-based inference interface. The system meets its core objective of providing an accessible prototype that analyzes uploaded audio and returns disfluency-risk predictions in a practical, modular, and extendable form.
