@@ -258,17 +258,45 @@ dataset/
 - **Reasoning:** Prevents training and test sets from containing related chunks from the same parent recording
 - **Model Saving:** Final trained classifier is saved as `model.pkl`
 
-## 10. Results and Performance
+## 10. Results and Findings
 
-### 10.1 Expected Performance
-- **Prediction Output:** Two-class result with probability score
-- **Inference Speed:** Designed for quick local inference on uploaded audio
-- **Training Output:** Confusion matrix and full classification report are printed after each training run
+### 10.1 Evaluation Output
+The training pipeline evaluates the model on a held-out test split created with `GroupShuffleSplit(test_size=0.2, random_state=42)`. After training, the system prints two main evaluation outputs:
 
-### 10.2 Model Behavior
-- The classifier labels audio as either `Disfluency Risk Detected` or `Fluent Speech`
-- The web app uses a threshold of `0.5` on the positive-class probability
-- Inference time is measured and displayed to the user on the result page
+- **Confusion Matrix:** Shows how many fluent and disfluency-risk samples were classified correctly or incorrectly
+- **Classification Report:** Provides precision, recall, F1-score, and support for both classes
+
+These outputs form the main evidence for judging whether the prototype is learning useful distinctions from the extracted audio features.
+
+### 10.2 Key Findings
+- The project successfully completes the full machine learning workflow from raw audio preprocessing to trained-model inference
+- The grouped train-test split is an important finding in itself because it reduces leakage between chunks from the same original disfluent recording, making evaluation more realistic
+- The Random Forest model is able to operate on compact handcrafted audio features without requiring GPU-based deep learning infrastructure
+- The inference application returns not only a class label but also a probability score and execution time, which makes the prototype more informative during testing
+
+### 10.3 Observed System Behavior
+- Audio files are normalized to a fixed 8-second window, which keeps feature extraction and prediction behavior consistent across inputs
+- The classifier labels uploaded speech as either `Disfluency Risk Detected` or `Fluent Speech`
+- The Flask application uses a probability threshold of `0.5` for the final decision
+- Inference is designed for quick local execution and reports the measured processing time to the user
+- Upload validation and exception handling improve reliability by rejecting unsupported formats and showing readable error messages
+
+### 10.4 Interpretation of Findings
+The project findings show that a traditional machine learning approach can be used to build a practical baseline system for dyslexia-related fluency screening from reading audio. Instead of relying on end-to-end deep neural models, this prototype demonstrates that MFCC statistics, zero-crossing rate, and RMS energy can be combined with a Random Forest classifier to create an accessible and computationally efficient screening workflow. The use of grouped evaluation also strengthens the credibility of the results by avoiding overly optimistic performance estimates caused by chunk-level overlap between training and test data.
+
+### 10.5 Reported Metrics to Include After Final Training Run
+For a final submission, this section should include the exact values printed by `train.py` from the most recent training run:
+
+- Accuracy
+- Precision for fluent speech
+- Recall for fluent speech
+- F1-score for fluent speech
+- Precision for disfluency-risk speech
+- Recall for disfluency-risk speech
+- F1-score for disfluency-risk speech
+- Final confusion matrix values
+
+Adding those concrete numbers will turn the current qualitative findings into a complete quantitative results section.
 
 ## 11. Deployment and Usage
 
